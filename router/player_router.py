@@ -17,6 +17,7 @@ def get_player_by_id(id):
     else:
         return jsonify({"error": "Player not found"}), 404
 
+"""
 @player_bp.route("/player", methods=["POST"])
 def create_player():
     data = request.get_json()
@@ -53,3 +54,4 @@ def update_player(id):
 def delete_player(id):
     result = players.delete_player(id)
     return jsonify(result)
+"""
