@@ -3,6 +3,9 @@
 # Kings World Cup 2024 API
 Welcome to the documentation for the Kings League World Cup API. This is a fan-made *Python* project with the purpose of promoting the competition. All data is sourced from the [official Kings League website](https://kingsleague.pro) via a web-scraping script.
 
+
+**Access now**: [https://kings-league-api.onrender.com](https://kings-league-api.onrender.com)
+
 Below are the available endpoints:
 
 - [GET /players](#get-players): Retrieve all players.
@@ -57,7 +60,7 @@ GET /players
 
 #### Example Usage
 ```
-curl -X GET https://api.example.com/players
+curl -X GET https://kings-league-api.onrender.com/players
 ```
 **Note:** Only goalkeepers have ratio and goals_conceded attributes.
 
@@ -92,7 +95,7 @@ GET /player/1
 
 #### Example Usage
 ```
-curl -X GET https://api.example.com/player/&lt;id&gt;
+curl -X GET https://kings-league-api.onrender.com/player/&lt;id&gt;
 ```
 
 ### POST /player
@@ -136,7 +139,7 @@ Create a new player.
 
 #### Example Usage
 ```bash
-curl -X POST -H "Content-Type: application/json" -d '{"name": "New Player", "role": "Midfielder", "team": "Team A", "appearances": 5, "goals": 2, "yellow_cards": 1, "red_cards": 0, "mvps": 0, "goals_conceded": 0, "ratio": 0.4}' https://api.example.com/player
+curl -X POST -H "Content-Type: application/json" -d '{"name": "New Player", "role": "Midfielder", "team": "Team A", "appearances": 5, "goals": 2, "yellow_cards": 1, "red_cards": 0, "mvps": 0, "goals_conceded": 0, "ratio": 0.4}' https://kings-league-api.onrender.com/player
 ```
 
 ### PATCH /player/<id>
@@ -180,7 +183,7 @@ Update a player by ID.
 
 #### Example Usage
 ```bash
-curl -X PATCH -H "Content-Type: application/json" -d '{"name": "Updated Player Name", "role": "Forward", "team": "Team B", "appearances": 20, "goals": 15, "yellow_cards": 2, "red_cards": 0, "mvps": 3, "goals_conceded": 10, "ratio": 0.75}' https://api.example.com/player/1
+curl -X PATCH -H "Content-Type: application/json" -d '{"name": "Updated Player Name", "role": "Forward", "team": "Team B", "appearances": 20, "goals": 15, "yellow_cards": 2, "red_cards": 0, "mvps": 3, "goals_conceded": 10, "ratio": 0.75}' https://kings-league-api.onrender.com/player/1
 ```
 
 ### DELETE /player/<id>
@@ -213,7 +216,7 @@ DELETE /player/1
 
 #### Example Usage
 ```bash
-curl -X DELETE https://api.example.com/player/1
+curl -X DELETE https://kings-league-api.onrender.com/player/1
 ```
 
 ## License

@@ -133,7 +133,7 @@
 }</code></pre>
 
         <h3>Example Usage</h3>
-        <pre><code>curl -X GET https://api.example.com/players</code></pre>
+        <pre><code>curl -X GET https://kings-league-api.onrender.com/players</code></pre>
 
         <p><strong>Note:</strong> Only goalkeepers have <code>ratio</code> and <code>goals_conceded</code> attributes.
         </p>
@@ -166,7 +166,7 @@
 }</code></pre>
 
         <h3>Example Usage</h3>
-        <pre><code>curl -X GET https://api.example.com/player/&lt;id&gt;</code></pre>
+        <pre><code>curl -X GET https://kings-league-api.onrender.com/player/&lt;id&gt;</code></pre>
     </section>
 
     <section id="create-player">
@@ -206,7 +206,7 @@
 }</code></pre>
 
         <h3>Example Usage</h3>
-        <pre><code>curl -X POST -H "Content-Type: application/json" -d '{"name": "New Player", "role": "Midfielder", "team": "Team A", "appearances": 5, "goals": 2, "yellow_cards": 1, "red_cards": 0, "mvps": 0, "goals_conceded": 0, "ratio": 0.4}' https://api.example.com/player</code></pre>
+        <pre><code>curl -X POST -H "Content-Type: application/json" -d '{"name": "New Player", "role": "Midfielder", "team": "Team A", "appearances": 5, "goals": 2, "yellow_cards": 1, "red_cards": 0, "mvps": 0, "goals_conceded": 0, "ratio": 0.4}' https://kings-league-api.onrender.com/player</code></pre>
         <p><strong>Note:</strong> POST requests are disabled for security reasons.</p>
     </section>
 
@@ -247,7 +247,7 @@
 }</code></pre>
 
         <h3>Example Usage</h3>
-        <pre><code>curl -X PATCH -H "Content-Type: application/json" -d '{"name": "Updated Player Name", "role": "Forward", "team": "Team B", "appearances": 20, "goals": 15, "yellow_cards": 2, "red_cards": 0, "mvps": 3, "goals_conceded": 10, "ratio": 0.75}' https://api.example.com/player/1</code></pre>
+        <pre><code>curl -X PATCH -H "Content-Type: application/json" -d '{"name": "Updated Player Name", "role": "Forward", "team": "Team B", "appearances": 20, "goals": 15, "yellow_cards": 2, "red_cards": 0, "mvps": 3, "goals_conceded": 10, "ratio": 0.75}' https://kings-league-api.onrender.com/player/1</code></pre>
         <p><strong>Note:</strong> PATCH requests are disabled for security reasons.</p>
     </section>
 
@@ -277,7 +277,7 @@
 }</code></pre>
 
         <h3>Example Usage</h3>
-        <pre><code>curl -X DELETE https://api.example.com/player/1</code></pre>
+        <pre><code>curl -X DELETE https://kings-league-api.onrender.com/player/1</code></pre>
         <p><strong>Note:</strong> DELETE requests are disabled for security reasons.</p>
     </section>
 
