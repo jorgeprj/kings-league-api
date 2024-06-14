@@ -7,9 +7,9 @@ Below are the available endpoints:
 
 - [GET /players](#get-players): Retrieve all players.
 - [GET /player/&lt;id&gt;](#get-player): Retrieve a player by ID.
-- [POST /player](#create-player): Create a new player.
-- [POST /player/&lt;id&gt;](#update-player): Update a player by ID.
-- [DELETE /player/&lt;id&gt;](#delete-player): Delete a player by ID.
+- [POST /player](#create-player): Create a new player **(disabled for security reasons)**..
+- [PATCH /player/&lt;id&gt;](#update-player): Update a player by ID **(disabled for security reasons)**..
+- [DELETE /player/&lt;id&gt;](#delete-player): Delete a player by ID **(disabled for security reasons)**..
 
 ## Endpoints
 
@@ -137,10 +137,9 @@ Create a new player.
 #### Example Usage
 ```bash
 curl -X POST -H "Content-Type: application/json" -d '{"name": "New Player", "role": "Midfielder", "team": "Team A", "appearances": 5, "goals": 2, "yellow_cards": 1, "red_cards": 0, "mvps": 0, "goals_conceded": 0, "ratio": 0.4}' https://api.example.com/player
-
 ```
 
-### POST /player/<id>
+### PATCH /player/<id>
 Update a player by ID.
 
 #### Request Body
@@ -181,8 +180,7 @@ Update a player by ID.
 
 #### Example Usage
 ```bash
-curl -X POST -H "Content-Type: application/json" -d '{"name": "Updated Player Name", "role": "Forward", "team": "Team B", "appearances": 20, "goals": 15, "yellow_cards": 2, "red_cards": 0, "mvps": 3, "goals_conceded": 10, "ratio": 0.75}' https://api.example.com/player/1
-
+curl -X PATCH -H "Content-Type: application/json" -d '{"name": "Updated Player Name", "role": "Forward", "team": "Team B", "appearances": 20, "goals": 15, "yellow_cards": 2, "red_cards": 0, "mvps": 3, "goals_conceded": 10, "ratio": 0.75}' https://api.example.com/player/1
 ```
 
 ### DELETE /player/<id>

@@ -65,7 +65,7 @@
             margin-right: 8px;
         }
 
-        .link:hover{
+        .link:hover {
             text-decoration: underline;
         }
     </style>
@@ -80,16 +80,16 @@
     <section id="overview">
         <h2>Overview</h2>
         <p>
-            Welcome to the documentation for the Kings League World Cup API. This is a fan-made python project with the purpose of promoting the competition. All data is sourced from the 
-            <a href="https://kingsleague.pro" target="_blank">official Kings League website</a> via a web-scraping script. 
+            Welcome to the documentation for the Kings League World Cup API. This is a fan-made python project with the purpose of promoting the competition. All data is sourced from the
+            <a href="https://kingsleague.pro" target="_blank">official Kings League website</a> via a web-scraping script.
         </p>
         <p>Below are the available endpoints:</p>
         <ul>
             <li><a href="#get-players">GET /players</a>: Retrieve all players.</li>
             <li><a href="#get-player">GET /player/&lt;id&gt;</a>: Retrieve player by ID.</li>
-            <li><a href="#create-player">POST /player</a>: Create a new player.</li>
-            <li><a href="#update-player">POST /player/&lt;id&gt;</a>: Update a player by ID.</li>
-            <li><a href="#delete-player">DELETE /player/&lt;id&gt;</a>: Delete a player by ID.</li>
+            <li><a href="#create-player">POST /player</a>: Create a new player <strong>(disabled for security reasons)</strong>.</li>
+            <li><a href="#update-player">PATCH /player/&lt;id&gt;</a>: Update a player by ID <strong>(disabled for security reasons)</strong>.</li>
+            <li><a href="#delete-player">DELETE /player/&lt;id&gt;</a>: Delete a player by ID <strong>(disabled for security reasons)</strong>.</li>
         </ul>
     </section>
 
@@ -207,10 +207,11 @@
 
         <h3>Example Usage</h3>
         <pre><code>curl -X POST -H "Content-Type: application/json" -d '{"name": "New Player", "role": "Midfielder", "team": "Team A", "appearances": 5, "goals": 2, "yellow_cards": 1, "red_cards": 0, "mvps": 0, "goals_conceded": 0, "ratio": 0.4}' https://api.example.com/player</code></pre>
+        <p><strong>Note:</strong> POST requests are disabled for security reasons.</p>
     </section>
 
     <section id="update-player">
-        <h2>POST /player/&lt;id&gt;</h2>
+        <h2>PATCH /player/&lt;id&gt;</h2>
         <p>Update a player by ID.</p>
 
         <h3>Request Body</h3>
@@ -246,7 +247,8 @@
 }</code></pre>
 
         <h3>Example Usage</h3>
-        <pre><code>curl -X POST -H "Content-Type: application/json" -d '{"name": "Updated Player Name", "role": "Forward", "team": "Team B", "appearances": 20, "goals": 15, "yellow_cards": 2, "red_cards": 0, "mvps": 3, "goals_conceded": 10, "ratio": 0.75}' https://api.example.com/player/1</code></pre>
+        <pre><code>curl -X PATCH -H "Content-Type: application/json" -d '{"name": "Updated Player Name", "role": "Forward", "team": "Team B", "appearances": 20, "goals": 15, "yellow_cards": 2, "red_cards": 0, "mvps": 3, "goals_conceded": 10, "ratio": 0.75}' https://api.example.com/player/1</code></pre>
+        <p><strong>Note:</strong> PATCH requests are disabled for security reasons.</p>
     </section>
 
     <section id="delete-player">
@@ -276,6 +278,7 @@
 
         <h3>Example Usage</h3>
         <pre><code>curl -X DELETE https://api.example.com/player/1</code></pre>
+        <p><strong>Note:</strong> DELETE requests are disabled for security reasons.</p>
     </section>
 
     <!-- Add more sections for other endpoints -->
