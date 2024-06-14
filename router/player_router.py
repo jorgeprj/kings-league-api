@@ -12,22 +12,32 @@ def get_players():
 def create_player():
     data = request.get_json()
     name = data["name"]
-    age = data["age"]
-    goals = data["goals"]
+    role = data["role"]
     team = data["team"]
-    result = players.create_player(name, age, goals, team)
+    appearances = data["appearances"]
+    goals = data["goals"]
+    yellow_cards = data["yellow_cards"]
+    red_cards = data["red_cards"]
+    mvps = data["red_cards"]
+    goals_con = data["goals_con"]
+    ratio = data["ratio"]
+    result = players.create_player(name, role, team, appearances, goals, yellow_cards, red_cards, mvps, goals_con, ratio)
     return jsonify(result)
 
 @player_bp.route("/player/<id>", methods=["POST"])
 def update_player(id):
     data = request.get_json()
-
     name = data["name"]
-    age = data["age"]
-    goals = data["goals"]
+    role = data["role"]
     team = data["team"]
-
-    result = players.update_user(id, name, age, goals, team)
+    appearances = data["appearances"]
+    goals = data["goals"]
+    yellow_cards = data["yellow_cards"]
+    red_cards = data["red_cards"]
+    mvps = data["red_cards"]
+    goals_con = data["goals_con"]
+    ratio = data["ratio"]
+    result = players.update_user(id, name, role, team, appearances, goals, yellow_cards, red_cards, mvps, goals_con, ratio)
     return jsonify(result)
 
 @player_bp.route("/player/<id>", methods=["DELETE"])

@@ -21,19 +21,19 @@ class players:
         player = [dict(zip(colunas, row)) for row in cursor.fetchall()]
         return player
     
-    def create_player(name, age, goals, team):
+    def create_player(name, role, team, appearances, goals, yellow_cards, red_cards, mvps, goals_con, ratio):
         db = connect_db()
         cursor = db.cursor()
-        sql = "INSERT INTO PLAYERS(name, age, goals, team) VALUES (?, ?, ?, ?)"
-        cursor.execute(sql, [name, age, goals, team])
+        sql = "INSERT INTO PLAYERS(name, role, team, appearances, goals, yellow_cards, red_cards, mvps, goals_con, ratio) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        cursor.execute(sql, [name, role, team, appearances, goals, yellow_cards, red_cards, mvps, goals_con, ratio])
         db.commit()
         return "New player registered successfully"
     
-    def update_player(id, name, age, goals, team):
+    def update_player(id, name, role, team, appearances, goals, yellow_cards, red_cards, mvps, goals_con, ratio):
         db = connect_db()
         cursor = db.cursor()
-        sql = "UPDATE PLAYERS SET name = ?, age = ?, goals = ?, team = ? WHERE id = ?"
-        cursor.execute(sql, [name, age, goals, team])
+        sql = "UPDATE PLAYERS SET name = ?, role = ?, team = ?, appearances = ?, goals = ?, yellow_cards = ?, red_cards = ? , mvps = ?, goals_con = ?, ratio = ?  WHERE id = ?"
+        cursor.execute(sql, [name, role, team, appearances, goals, yellow_cards, red_cards, mvps, goals_con, ratio])
         db.commit()
         return "Player " + name + " was successfully updated"
     
