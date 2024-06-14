@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <title>Kings League World Cup API</title>
+    <style>
+        /* Styles for the page */
+        body {
+            font-family: "Inter", sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+        h2 {
+            margin-top: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: Consolas, monospace;
+        }
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kings League World Cup 2024 API</h1>
+    </header>
+    
+    <section id="overview">
+        <h2>Overview</h2>
+        <p>
+            Welcome to the documentation for the Players API. Below are the available endpoints:
+        </p>
+        <ul>
+            <li><a href="#get-players">GET /players</a>: Retrieve all players.</li>
+            <li><a href="#create-player">POST /player</a>: Create a new player.</li>
+            <li><a href="#update-player">POST /player/&lt;id&gt;</a>: Update a player by ID.</li>
+            <li><a href="#delete-player">DELETE /player/&lt;id&gt;</a>: Delete a player by ID.</li>
+        </ul>
+    </section>
+    
+    <section id="get-players">
+        <h2>GET /players</h2>
+        <p>Retrieve all players.</p>
+        
+        <h3>Request</h3>
+        <pre><code>GET /players</code></pre>
+        
+        <h3>Response</h3>
+        <pre><code>{
+    "players": [
+        {
+            "id": 1,
+            "name": "Player Name",
+            "role": "Player Role",
+            "team": "Player Team",
+            "appearances": 10,
+            "goals": 5,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "mvps": 1,
+            "goals_conceded": 10,
+            "ratio": 0.5
+        },
+        {
+            "id": 2,
+            "name": "Another Player",
+            "role": "Forward",
+            "team": "Team B",
+            "appearances": 15,
+            "goals": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "mvps": 3,
+            "goals_conceded": 20,
+            "ratio": 0.6
+        }
+    ]
+}</code></pre>
+        
+        <h3>Example Usage</h3>
+        <pre><code>curl -X GET https://api.example.com/players</code></pre>
+    </section>
+    
+    <section id="create-player">
+        <h2>POST /player</h2>
+        <p>Create a new player.</p>
+        
+        <h3>Request Body</h3>
+        <pre><code>{
+    "name": "New Player",
+    "role": "Midfielder",
+    "team": "Team A",
+    "appearances": 5,
+    "goals": 2,
+    "yellow_cards": 1,
+    "red_cards": 0,
+    "mvps": 0,
+    "goals_conceded": 0,
+    "ratio": 0.4
+}</code></pre>
+        
+        <h3>Response</h3>
+        <pre><code>{
+    "message": "Player created successfully",
+    "player": {
+        "id": 3,
+        "name": "New Player",
+        "role": "Midfielder",
+        "team": "Team A",
+        "appearances": 5,
+        "goals": 2,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "mvps": 0,
+        "goals_conceded": 0,
+        "ratio": 0.4
+    }
+}</code></pre>
+        
+        <h3>Example Usage</h3>
+        <pre><code>curl -X POST -H "Content-Type: application/json" -d '{"name": "New Player", "role": "Midfielder", "team": "Team A", "appearances": 5, "goals": 2, "yellow_cards": 1, "red_cards": 0, "mvps": 0, "goals_conceded": 0, "ratio": 0.4}' https://api.example.com/player</code></pre>
+    </section>
+    
+    <section id="update-player">
+        <h2>POST /player/&lt;id&gt;</h2>
+        <p>Update a player by ID.</p>
+        
+        <h3>Request Body</h3>
+        <pre><code>{
+    "name": "Updated Player Name",
+    "role": "Forward",
+    "team": "Team B",
+    "appearances": 20,
+    "goals": 15,
+    "yellow_cards": 2,
+    "red_cards": 0,
+    "mvps": 3,
+    "goals_conceded": 10,
+    "ratio": 0.75
+}</code></pre>
+        
+        <h3>Response</h3>
+        <pre><code>{
+    "message": "Player updated successfully",
+    "player": {
+        "id": 1,
+        "name": "Updated Player Name",
+        "role": "Forward",
+        "team": "Team B",
+        "appearances": 20,
+        "goals": 15,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "mvps": 3,
+        "goals_conceded": 10,
+        "ratio": 0.75
+    }
+}</code></pre>
+        
+        <h3>Example Usage</h3>
+        <pre><code>curl -X POST -H "Content-Type: application/json" -d '{"name": "Updated Player Name", "role": "Forward", "team": "Team B", "appearances": 20, "goals": 15, "yellow_cards": 2, "red_cards": 0, "mvps": 3, "goals_conceded": 10, "ratio": 0.75}' https://api.example.com/player/1</code></pre>
+    </section>
+    
+    <section id="delete-player">
+        <h2>DELETE /player/&lt;id&gt;</h2>
+        <p>Delete a player by ID.</p>
+        
+        <h3>Request</h3>
+        <pre><code>DELETE /player/1</code></pre>
+        
+        <h3>Response</h3>
+        <pre><code>{
+    "message": "Player deleted successfully",
+    "deleted_player": {
+        "id": 1,
+        "name": "Updated Player Name",
+        "role": "Forward",
+        "team": "Team B",
+        "appearances": 20,
+        "goals": 15,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "mvps": 3,
+        "goals_conceded": 10,
+        "ratio": 0.75
+    }
+}</code></pre>
+        
+        <h3>Example Usage</h3>
+        <pre><code>curl -X DELETE https://api.example.com/player/1</code></pre>
+    </section>
+    
+    <!-- Add more sections for other endpoints -->
+    
+    <footer>
+        <p>&copy; 2024 Kings League. All rights reserved.</p>
+    </footer>
+</body>
+</html>
