@@ -8,6 +8,15 @@ def get_players():
     result = players.get_players()
     return jsonify(result)
 
+@player_bp.route("/player/<id>", methods=["GET"])
+def get_player_by_id(id):
+    players_instance = players()  
+    result = players_instance.get_player_by_id(id)
+    if result:
+        return jsonify(result)
+    else:
+        return jsonify({"error": "Player not found"}), 404
+
 @player_bp.route("/player", methods=["POST"])
 def create_player():
     data = request.get_json()
@@ -24,7 +33,7 @@ def create_player():
     result = players.create_player(name, role, team, appearances, goals, yellow_cards, red_cards, mvps, goals_con, ratio)
     return jsonify(result)
 
-@player_bp.route("/player/<id>", methods=["POST"])
+@player_bp.route("/player/<id>", methods=["PATCH"])
 def update_player(id):
     data = request.get_json()
     name = data["name"]
@@ -37,7 +46,7 @@ def update_player(id):
     mvps = data["red_cards"]
     goals_con = data["goals_con"]
     ratio = data["ratio"]
-    result = players.update_user(id, name, role, team, appearances, goals, yellow_cards, red_cards, mvps, goals_con, ratio)
+    result = players.update_player(id, name, role, team, appearances, goals, yellow_cards, red_cards, mvps, goals_con, ratio)
     return jsonify(result)
 
 @player_bp.route("/player/<id>", methods=["DELETE"])
